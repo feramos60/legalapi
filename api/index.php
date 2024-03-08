@@ -30,9 +30,10 @@ $auth = new Auth($user_gateway, $codec);
 if ( ! $auth->authenticateAccessToken()) {
     exit;
 }
-var_dump($auth);
-die();
+
 $user_id = $auth->getUserID();
+var_dump($user_id);
+die();
 
 $task_gateway = new TaskGateway($database);
 

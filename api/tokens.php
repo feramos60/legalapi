@@ -2,7 +2,7 @@
 
 $payload = [
     "sub" => $user["id"],
-    "name" => $user["name"],
+    "name" => $user["first_name"],
     "exp" => time() + 300
 ];
 

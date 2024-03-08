@@ -1,0 +1,12 @@
+# OS X
+.DS_Store
+.AppleDouble
+.LSOverride
+
+/vendor/
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+

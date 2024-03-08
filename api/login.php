@@ -33,7 +33,7 @@ $user = $user_gateway->getByUsername($data["username"]);
 if ($user === false) {
     
     http_response_code(401);
-    echo json_encode(["message" => "invalid authentication"]);
+    echo json_encode(["message" => "user or password dont't exist or invalid authentication"]);
     exit;
 }
 

@@ -12,7 +12,7 @@ class UserGateway
     public function getByAPIKey(string $key): array | false
     {
         $sql = "SELECT *
-                FROM user
+                FROM users
                 WHERE api_key = :api_key";
                 
         $stmt = $this->conn->prepare($sql);
@@ -27,12 +27,12 @@ class UserGateway
     public function getByUsername(string $username): array | false
     {
         $sql = "SELECT *
-                FROM user
-                WHERE username = :username";
+                FROM users
+                WHERE email = :user_name";
                 
         $stmt = $this->conn->prepare($sql);
         
-        $stmt->bindValue(":username", $username, PDO::PARAM_STR);
+        $stmt->bindValue(":user_name", $username, PDO::PARAM_STR);
         
         $stmt->execute();
         
@@ -42,7 +42,7 @@ class UserGateway
     public function getByID(int $id): array | false
     {
         $sql = "SELECT *
-                FROM user
+                FROM users
                 WHERE id = :id";
                 
         $stmt = $this->conn->prepare($sql);

@@ -8,9 +8,9 @@ $path = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
 
 $parts = explode("/", $path);
 
-$resource = $parts[2];
+$resource = $parts[3];
 
-$id = $parts[3] ?? null;
+$id = $parts[4] ?? null;
 
 if ($resource != "tasks") {
     
@@ -22,7 +22,7 @@ $database = new Database($_ENV["DB_HOST"], $_ENV["DB_NAME"], $_ENV["DB_USER"],
                          $_ENV["DB_PASS"]);
                          
 $user_gateway = new UserGateway($database);
-
+ 
 $codec = new JWTCodec($_ENV["SECRET_KEY"]);
 
 $auth = new Auth($user_gateway, $codec);
@@ -30,7 +30,8 @@ $auth = new Auth($user_gateway, $codec);
 if ( ! $auth->authenticateAccessToken()) {
     exit;
 }
-
+var_dump($auth);
+die();
 $user_id = $auth->getUserID();
 
 $task_gateway = new TaskGateway($database);

@@ -32,15 +32,14 @@ if ( ! $auth->authenticateAccessToken()) {
 }
 
 $user_id = $auth->getUserID();
-var_dump($user_id);
-die();
 
 $task_gateway = new TaskGateway($database);
 
 $controller = new TaskController($task_gateway, $user_id);
 
 $controller->processRequest($_SERVER['REQUEST_METHOD'], $id);
-
+var_dump($controller);
+die();
 
 
 

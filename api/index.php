@@ -38,8 +38,7 @@ $task_gateway = new TaskGateway($database);
 $controller = new TaskController($task_gateway, $user_id);
 
 $controller->processRequest($_SERVER['REQUEST_METHOD'], $id);
-var_dump($controller);
-die();
+
 
 
 

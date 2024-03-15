@@ -30,7 +30,7 @@ class UserGateway
     {
         $sql = "SELECT *
                 FROM users
-                WHERE email = :user_name";
+                WHERE user_name = :user_name";
                 
         $stmt = $this->conn->prepare($sql);
         

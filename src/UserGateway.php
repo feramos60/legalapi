@@ -35,7 +35,7 @@ class UserGateway
     {
         $sql = "SELECT *
                 FROM users
-                WHERE user_name = :user_name";
+                WHERE user_name = :user_name AND is_active = 1";
                 
         $stmt = $this->conn->prepare($sql);
         

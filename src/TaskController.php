@@ -13,7 +13,7 @@ class TaskController
             
             if ($method == "GET") {
                 
-                echo json_encode($this->gateway->getAllForUser($this->user_id));
+                echo json_encode($this->gateway->getAllForUser());
                 
             } elseif ($method == "POST") {
                 

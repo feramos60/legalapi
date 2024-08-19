@@ -12,7 +12,7 @@ $resource = $parts[3];
 
 $id = $parts[4] ?? null;
 
-if ($resource != "tasks") {
+if ($resource != "lawers") {
     
     http_response_code(404);
     exit;
